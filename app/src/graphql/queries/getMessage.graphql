@@ -1,0 +1,14 @@
+query getMessage($from: String!, $to: String!) {
+    getMessages(from: $from, to: $to) {
+        sent {
+            id
+            msg
+            createdAt
+        }
+        received {
+            id
+            msg
+            createdAt
+        }
+    }
+}

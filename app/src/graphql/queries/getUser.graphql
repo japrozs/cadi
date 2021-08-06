@@ -1,0 +1,5 @@
+query getUser($username: String!) {
+    getUser(username: $username) {
+        imgUrl
+    }
+}

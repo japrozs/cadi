@@ -1,0 +1,15 @@
+# on:
+#     push:
+#         paths:
+#             - "server/**"
+
+# jobs:
+#     deploy:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - uses: actions/checkout@v2
+#             - uses: actions/setup-node@v1
+#               with:
+#                   node-version: 12
+#             - name: "Deploy server to dokku"
+#               run: "chmod +x ./scripts/deploy.sh && ./scripts/deploy.sh"
