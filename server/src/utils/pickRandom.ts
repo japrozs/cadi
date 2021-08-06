@@ -1,8 +1,8 @@
 export const pickRandom = () => {
     const arr: string[] = [
         "¯\\_(ツ)_/¯",
-        "Hey there! I'm using whatsapp",
-        "Busy, Can't talk",
+        "Hey there! I am using cadi",
+        "Busy, Cant talk",
         "How are you?",
         "What up?",
     ];
