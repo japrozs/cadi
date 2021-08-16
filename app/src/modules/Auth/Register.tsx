@@ -61,8 +61,10 @@ export const Register: React.FC<AuthStackNav<"Register">> = ({
                 value={username}
                 onChangeText={(t) => setUsername(t)}
             />
-            {errors.hasOwnProperty("username") && (
+            {errors.hasOwnProperty("username") ? (
                 <Text style={styles.error}>{errors.username}</Text>
+            ) : (
+                <></>
             )}
             <Text style={styles.label}>Email</Text>
             <TextInput
@@ -78,8 +80,10 @@ export const Register: React.FC<AuthStackNav<"Register">> = ({
                 value={email}
                 onChangeText={(t) => setEmail(t)}
             />
-            {errors.hasOwnProperty("email") && (
+            {errors.hasOwnProperty("email") ? (
                 <Text style={styles.error}>{errors.email}</Text>
+            ) : (
+                <></>
             )}
             <Text style={styles.label}>Password</Text>
             <TextInput
@@ -96,8 +100,10 @@ export const Register: React.FC<AuthStackNav<"Register">> = ({
                 value={password}
                 onChangeText={(t) => setPassword(t)}
             />
-            {errors.hasOwnProperty("password") && (
+            {errors.hasOwnProperty("password") ? (
                 <Text style={styles.error}>{errors.password}</Text>
+            ) : (
+                <></>
             )}
             <Pressable
                 onPressIn={handleSubmit}
@@ -157,7 +163,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.grayDark,
         borderRadius: 5,
         textAlign: "center",
-        cursor: "pointer",
     },
     error: {
         color: colors.errorRed,

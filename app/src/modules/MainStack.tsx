@@ -74,7 +74,7 @@ export const MainStack: React.FC<MainTabStackProps> = ({}) => {
             />
             <Stack.Screen
                 name="Search"
-                options={({ route }) => ({
+                options={() => ({
                     headerTitle: "Search",
                     headerTintColor: "#fff",
                     headerBackground: () => "",

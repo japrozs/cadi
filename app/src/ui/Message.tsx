@@ -34,28 +34,24 @@ export const Message: React.FC<MessageProps> = ({
                 type === "sent" ? () => setisModalVisible(true) : () => {}
             }
         >
-            <View>
-                <View
-                    style={[
-                        styles.viewStyles,
-                        type === "sent"
-                            ? styles.sentStyles
-                            : styles.receivedStyles,
-                    ]}
-                >
-                    <Text style={styles.msg}>{msg}</Text>
-                </View>
-                <Text
-                    style={[
-                        styles.time,
-                        type === "sent"
-                            ? styles.sentTimeStyles
-                            : styles.receivedTimeStyles,
-                    ]}
-                >
-                    {timeSince(createdAt)}
-                </Text>
+            <View
+                style={[
+                    styles.viewStyles,
+                    type === "sent" ? styles.sentStyles : styles.receivedStyles,
+                ]}
+            >
+                <Text style={styles.msg}>{msg}</Text>
             </View>
+            <Text
+                style={[
+                    styles.time,
+                    type === "sent"
+                        ? styles.sentTimeStyles
+                        : styles.receivedTimeStyles,
+                ]}
+            >
+                {timeSince(createdAt)}
+            </Text>
         </TouchableOpacity>
     );
 };

@@ -19,7 +19,7 @@ const Main: React.FC<MainStackNav<"Main">> = ({ navigation }) => {
     const messages = parseMessages(msgs);
     return (
         <ScrollView>
-            {messages &&
+            {messages ? (
                 messages.map((msg) => (
                     <Chat
                         navigation={navigation}
@@ -30,7 +30,10 @@ const Main: React.FC<MainStackNav<"Main">> = ({ navigation }) => {
                         }
                         description={msg.msg}
                     />
-                ))}
+                ))
+            ) : (
+                <View></View>
+            )}
         </ScrollView>
     );
 };

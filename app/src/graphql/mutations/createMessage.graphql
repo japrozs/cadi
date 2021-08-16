@@ -1,3 +1,0 @@
-mutation createMessage($from: String!, $to: String!, $msg: String!) {
-    createMessage(from: $from, to: $to, msg: $msg)
-}

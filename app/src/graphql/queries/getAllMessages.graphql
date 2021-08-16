@@ -1,8 +1,0 @@
-query getAllMessages($from: String!) {
-    getAllMessages(from: $from) {
-        from
-        to
-        msg
-        createdAt
-    }
-}

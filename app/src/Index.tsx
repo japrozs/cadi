@@ -7,7 +7,6 @@ import { useMeQuery } from "./generated/graphql";
 import { AuthStack } from "./modules/AuthStack";
 import { MainStack } from "./modules/MainStack";
 import * as Linking from "expo-linking";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Login from "./modules/Auth/Login";
 import Main from "./modules/Main/main";
 
@@ -24,22 +23,20 @@ const linking = {
     },
 };
 
-const Tab = createBottomTabNavigator();
-
 export const Index: React.FC<IndexProps> = ({}) => {
     const { data, loading } = useMeQuery();
     const routeNameRef = React.useRef<string | undefined>();
     const navigationRef = React.useRef<NavigationContainerRef>(null);
 
     let body: any = <AuthStack />;
-    if (!loading && data && data.me == undefined) {
+    if (!loading && data !== undefined && data.me == undefined) {
         body = <AuthStack />;
     } else {
         body = <MainStack />;
     }
     return (
         <NavigationContainer ref={navigationRef} linking={linking}>
-            <>{body}</>
+            {body}
         </NavigationContainer>
     );
 };

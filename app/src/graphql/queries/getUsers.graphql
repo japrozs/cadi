@@ -1,8 +1,0 @@
-query getUsers {
-    getUsers {
-        id
-        imgUrl
-        description
-        username
-    }
-}

@@ -21,8 +21,7 @@ export const Search: React.FC<MainStackNav<"Search">> = ({ navigation }) => {
                 onChangeText={(sq) => setSearchQuery(sq)}
                 placeholder="Search"
             />
-            {data &&
-                searchQuery.trim().length !== 0 &&
+            {data !== undefined && searchQuery.trim().length !== 0 ? (
                 searchUser(searchQuery, data)?.map((user) => (
                     <>
                         {user.username !== d?.me?.username && (
@@ -35,7 +34,10 @@ export const Search: React.FC<MainStackNav<"Search">> = ({ navigation }) => {
                             />
                         )}
                     </>
-                ))}
+                ))
+            ) : (
+                <View></View>
+            )}
         </View>
     );
 };

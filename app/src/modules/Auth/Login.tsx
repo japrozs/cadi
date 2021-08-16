@@ -57,8 +57,10 @@ const Login: React.FC<AuthStackNav<"Login">> = ({ navigation }) => {
                 ]}
                 placeholder="Username or email"
             />
-            {errors.hasOwnProperty("usernameOrEmail") && (
+            {errors.hasOwnProperty("usernameOrEmail") ? (
                 <Text style={styles.error}>{errors.usernameOrEmail}</Text>
+            ) : (
+                <></>
             )}
             <Text style={styles.label}>Password</Text>
             <TextInput
@@ -75,8 +77,10 @@ const Login: React.FC<AuthStackNav<"Login">> = ({ navigation }) => {
                 value={password}
                 onChangeText={(t) => setPassword(t)}
             />
-            {errors.hasOwnProperty("password") && (
+            {errors.hasOwnProperty("password") ? (
                 <Text style={styles.error}>{errors.password}</Text>
+            ) : (
+                <></>
             )}
             <Pressable
                 onPressIn={handleSubmit}
