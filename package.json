@@ -4,6 +4,7 @@
   "devDependencies": {
     "lerna": "^4.0.0"
   },
+  "scripts" : {},
   "dependencies": {
     "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/drawer": "^5.12.5",
